@@ -1,0 +1,15 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+
+  <param name="use_sim_time" value="true" /> 
+
+  <param name="robot_description" textfile="$(find ani_description)/urdf/ani.urdf" />
+  <param name="use_gui" value="True"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <node pkg="vrep_swing_mechanism" type="vrep_swing_mechanism_node"      name="vrep_swing_mechanism" />
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true" />
+
+</launch>
